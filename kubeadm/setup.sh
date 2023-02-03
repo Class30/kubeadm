@@ -23,6 +23,7 @@ Note: Open Required Ports In AWS Security Groups. For now we will open All trafi
 1) Switch to root user
    
 sudo su -
+hostnamectl set-hostname master
 
 
 2) Disable swap & add kernel settings
