@@ -134,7 +134,7 @@ systemctl enable kubelet.service
 
 ==========COMMON FOR MASTER & SLAVES END ====
 
-kubeadm join 10.0.0.6:6443 --token xmzufh.e0nu3kb5ohijfxyh \
+#kubeadm join 10.0.0.6:6443 --token xmzufh.e0nu3kb5ohijfxyh \
         --discovery-token-ca-cert-hash sha256:579b6a53bd00c8483f5150b9fb521b6431fc38b1ac716b8b9a5f668928a93771
 
 	
@@ -149,6 +149,9 @@ sudo su -
 
 kubeadm init
 
+#copy kubeadm join token and paste it in a secure place.
+
+# next two commands - read comment - optional.
 # If you want to initialize kubernetes on Public EndPoint(Not recommended in real time). You can use below option Replace PUBLIC_IP with actual public ip of your kubernetes master node (Recommended to use Elastic(Create and assign elastic IP to master node and use that Elastic IP below)).Replace PORT with 6443 (API Server Port). 
 
 kubeadm init --control-plane-endpoint "PUBLIC_IP:PORT"
@@ -157,7 +160,7 @@ IF Error
 sudo kubeadm init --cri-socket /run/containerd/containerd.sock
 
 
-# Configure kubectl  exit as root user & exeucte as normal ubuntu user
+# Configure kubectl  exit as root user & exeucte next three commands as normal ubuntu user
 exit
 
 mkdir -p $HOME/.kube
