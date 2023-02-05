@@ -119,7 +119,7 @@ systemctl daemon-reload
 systemctl start kubelet
 systemctl enable kubelet.service
 ```
-## Initialised the control plane.
+## Initialized the control plane in the master node as the root user.
 ``` sh
 # Initialize Kubernetes control plane by running the below commond as root user.
 sudo kubeadm init
